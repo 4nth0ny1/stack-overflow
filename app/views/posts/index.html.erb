@@ -1,8 +1,66 @@
+<head>
+  <style>
+      .post-container {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .container-controller {
+        display: flex;
+      }
+
+      .sidebar-box {
+        display: flex;
+        flex-direction: column;
+      }
+     
+  </style>
+</head>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+<br>
+<%= link_to 'New Post', new_post_path %>
+<br><br>
 
-<table>
+
+
+<div class="post-container d-inline d-flex bd-highlight">
+    <% @posts.each do |post| %>
+  <div class="container-controller">
+      <div class="sidebar-container p-2 flex-shrink-1 bd-highlight">
+        <div class="sidebar-box">
+            <p><%= post.upvotes %></p>
+            <p>upvotes</p>
+        </div>
+        <div class="sidebar-box">
+            <p><%= post.answers %></p>
+            <p>answers</p>
+        </div>
+        <div class="sidebar-box">
+            <p><%= post.views %> views</p>
+        </div>
+      </div>
+
+      <div class="main-container">
+        <div class="p-2 w-100 bd-highlight">
+            <h4><%= post.title %></h4>
+        </div>
+        <div class="p-2 w-100 bd-highlight">
+            <p><%= post.description %></p>
+        </div>
+      </div>
+
+  </div>
+  <% end %>
+</div>
+
+
+
+
+  <br><br>
+  <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -10,7 +68,6 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @posts.each do |post| %>
       <tr>
@@ -26,4 +83,3 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
