@@ -70,6 +70,20 @@
       .question-button-group {
         
       }
+
+      .filters-tags-box {
+        background-color: white;
+        border: 1px solid gray;
+        border-radius: 3px;
+        font-size: 10px;
+        box-shadow: 1px 1px 10px 1px gray;
+        margin-top: 10px;
+        padding: 10px;
+      }
+
+      .filter-tags-box-item {
+        padding: 10px;
+      }
       
      
   </style>
@@ -172,14 +186,28 @@
         <p class="overflow-blog-section-item">Obvious copied answer not being deleted</p>
       </div>
 
-      <div class="custom-filters">
-          <p>Custom Filters</p>
-          <p>Create a custom filter</p>
-      </div>
+      <div class="filters-tags-boxes">
+          <div class="custom-filters filters-tags-box">
+              <p>Custom Filters</p>
+            <div class="filter-tags-box-item">
+              <p>Create a custom filter</p>
+            </div>
+          </div>
 
-      <div class="ignored-tags">
-          <p>Ignored Tags</p>
-          <p>Add an ignored tag</p>
+          <div class="watched-tags filters-tags-box">
+            <p>Watched Tags</p>
+            <img href="#">Image Magnified Glass</img>
+            <p>Watch tags to curate your list of questions.</p>
+            <button>Watch a tag</button>
+          </div>
+
+          <div class="ignored-tags filters-tags-box">
+            <p>Ignored Tags</p>
+            <div class="filter-tags-box-item">
+              
+              <p>Add an ignored tag</p>
+            </div>
+          </div>
       </div>
 
       <div class="hot-network-questions">
