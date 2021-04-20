@@ -2,7 +2,7 @@
   <style>
       .post-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
       }
 
       .container-controller {
@@ -45,16 +45,37 @@
       .overflow-blog-section-item {
         padding-left: 10px;
       }
+
+      .main-section-header {
+        border-bottom: 1px solid gray;
+        padding: 10px;
+      }
+
+      .ask-question-button {
+        padding: 10px;
+        border: 1px solid blue;
+        background: blue;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .top-questions-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .question-button-group {
+        
+      }
+      
      
   </style>
 </head>
 
 <p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-<br>
-<%= link_to 'New Post', new_post_path %>
-<br><br>
 
 <div class="container">
 
@@ -63,6 +84,7 @@
       <div class="menu-section"
         <p>Home</p>
         <p>PUBLIC</p>
+        <p class='menu-item'>Questions</p>
         <p class='menu-item'>Tags</p>
         <p class='menu-item'>Users</p>
         <p>FIND A JOB</p>
@@ -72,7 +94,34 @@
       </div>
     </div>
     <div class="col-6 col-border">
-      <h2>Top Questions</h2>
+
+      <div class="main-section-header">
+        <div class="top-questions-section">
+          <h2>Top Questions</h2>
+          <%= link_to 'Ask Question', new_post_path, class:"ask-question-button" %>
+        </div>
+        <div class="btn-group question-button-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck1">Interesting</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck2">375 Bounty</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck3">Hot</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck3">Week</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck3">Month</label>
+
+        </div>
+      </div>
+        
+        
+
+      
 
       <div class="post-container d-inline d-flex bd-highlight">
           <% @posts.each do |post| %>
