@@ -24,39 +24,67 @@
 <%= link_to 'New Post', new_post_path %>
 <br><br>
 
+<div class="container">
 
+  <div class="row">
+    <div class="col">
+      <p>Home</p>
+      <p>PUBLIC</p>
+      <p>Tags</p>
+      <p>Users</p>
+      <p>FIND A JOB</p>
+      <p>Jobs</p>
+      <p>Companies</p>
+      <p>TEAMS</p>
+    </div>
+    <div class="col-6">
+      <h2>Top Questions</h2>
 
-<div class="post-container d-inline d-flex bd-highlight">
-    <% @posts.each do |post| %>
-  <div class="container-controller">
-      <div class="sidebar-container p-2 flex-shrink-1 bd-highlight">
-        <div class="sidebar-box">
-            <p><%= post.upvotes %></p>
-            <p>upvotes</p>
+      <div class="post-container d-inline d-flex bd-highlight">
+          <% @posts.each do |post| %>
+        <div class="container-controller">
+            <div class="sidebar-container p-2 flex-shrink-1 bd-highlight">
+              <div class="sidebar-box">
+                  <p><%= post.upvotes %></p>
+                  <p>upvotes</p>
+              </div>
+              <div class="sidebar-box">
+                  <p><%= post.answers %></p>
+                  <p>answers</p>
+              </div>
+              <div class="sidebar-box">
+                  <p><%= post.views %> views</p>
+              </div>
+            </div>
+
+            <div class="main-container">
+              <div class="p-2 w-100 bd-highlight">
+                  <h4><%= post.title %></h4>
+              </div>
+              <div class="p-2 w-100 bd-highlight">
+                  <p><%= post.description %></p>
+              </div>
+            </div>
+
         </div>
-        <div class="sidebar-box">
-            <p><%= post.answers %></p>
-            <p>answers</p>
-        </div>
-        <div class="sidebar-box">
-            <p><%= post.views %> views</p>
-        </div>
+        <% end %>
       </div>
 
-      <div class="main-container">
-        <div class="p-2 w-100 bd-highlight">
-            <h4><%= post.title %></h4>
-        </div>
-        <div class="p-2 w-100 bd-highlight">
-            <p><%= post.description %></p>
-        </div>
-      </div>
 
+
+    </div>
+    <div class="col">
+      <p>The Overflow Blog</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>Featured on Meta</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>Hot Meta Posts</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+      <p>asldfkjdsa;jfds  asfdsafsdfsaf</p>
+    </div>
   </div>
-  <% end %>
 </div>
-
-
-
-
 
