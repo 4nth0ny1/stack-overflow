@@ -13,6 +13,21 @@
         display: flex;
         flex-direction: column;
       }
+
+      .menu-item {
+        text-indent: 50px;
+      }
+
+      .col-border {
+        border-right: 1px solid black; 
+        border-left: 1px solid black; 
+      }
+
+      .menu-section {
+        border-bottom: 1px solid black;
+        font-size: 12px;
+        color: #6a737c;
+      }
      
   </style>
 </head>
@@ -28,16 +43,18 @@
 
   <div class="row">
     <div class="col">
-      <p>Home</p>
-      <p>PUBLIC</p>
-      <p>Tags</p>
-      <p>Users</p>
-      <p>FIND A JOB</p>
-      <p>Jobs</p>
-      <p>Companies</p>
-      <p>TEAMS</p>
+      <div class="menu-section"
+        <p>Home</p>
+        <p>PUBLIC</p>
+        <p class='menu-item'>Tags</p>
+        <p class='menu-item'>Users</p>
+        <p>FIND A JOB</p>
+        <p class='menu-item'>Jobs</p>
+        <p class='menu-item'>Companies</p>
+        <p>TEAMS</p>
+      </div>
     </div>
-    <div class="col-6">
+    <div class="col-6 col-border">
       <h2>Top Questions</h2>
 
       <div class="post-container d-inline d-flex bd-highlight">
