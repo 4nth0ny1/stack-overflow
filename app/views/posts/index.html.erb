@@ -14,10 +14,6 @@
         flex-direction: column;
       }
 
-      .menu-item {
-        text-indent: 50px;
-      }
-
       .col-border {
         border-right: 1px solid black; 
         border-left: 1px solid black; 
@@ -84,6 +80,21 @@
       .filter-tags-box-item {
         padding: 10px;
       }
+
+      .tags {
+       display: flex; 
+       flex-direction: row;
+       
+      }
+
+      .tag-items {
+        background: blue;
+        color: white;
+        padding: 10px;
+        border: 1px blue solid;
+        margin: 5px;
+        border-radius: 5px;
+      }
       
      
   </style>
@@ -98,7 +109,7 @@
       <div class="menu-section"
         <p>Home</p>
         <p>PUBLIC</p>
-        <p class='menu-item'>Questions</p>
+        <%= link_to "Questions", posts_path, class: "nav-link menu-item" %>
         <p class='menu-item'>Tags</p>
         <p class='menu-item'>Users</p>
         <p>FIND A JOB</p>
@@ -160,6 +171,12 @@
               </div>
               <div class="p-2 w-100 bd-highlight">
                   <p><%= post.description %></p>
+              </div>
+
+              <div class="tags">
+                  <p class="tag-items">ruby</p>
+                  <p class="tag-items">rails</p>
+                  <p class="tag-items">iteration</p>
               </div>
             </div>
 

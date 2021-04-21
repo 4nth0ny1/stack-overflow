@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   resources :sessions
+  resources :tags
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
