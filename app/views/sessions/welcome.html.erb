@@ -1,9 +1,43 @@
+<style>
+    .menu-item {
+        text-indent: 50px;
+    }
 
-<h1>Welcome</h1>
+    .menu-section {
+        border-bottom: 1px solid black;
+        font-size: 12px;
+        color: #6a737c;
+    }
 
-<% if logged_in? %>
-    <h1>You are Logged In, <%= current_user.username %></h1>
-<%end%>
+</style>
 
-<%= button_to "Login", login_path, method: :get%>
-<%= button_to "Sign Up", new_user_path, method: :get%>
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-2">
+      <div class="menu-section"
+        <p>Home</p>
+        <p>PUBLIC</p>
+        <p class='menu-item'>Questions</p>
+        <p class='menu-item'>Tags</p>
+        <p class='menu-item'>Users</p>
+        <p>FIND A JOB</p>
+        <p class='menu-item'>Jobs</p>
+        <p class='menu-item'>Companies</p>
+        <p>TEAMS</p>
+      </div>
+    </div>
+
+    <div class="col-6 col-border">
+        <div class="main-section-header">
+
+        <% if logged_in? %>
+            <h1>You are Logged In, <%= current_user.username %></h1>
+        <%end%>
+
+        </div>
+    </div>
+
+</div>
