@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  upvotes
+  <br>
+  <%= link_to "Up", upvote_post_path(@post), method: :post %>
+  <%= link_to "Down", downvote_post_path(@post), method: :post %>
+
+  <%= @post.upvotes %>
+  <%= @post.views %>
+  views
+
+</p>
 <p>
   <strong>Title</strong>
   <br>

@@ -1,14 +1,21 @@
 class PostsController < ApplicationController
   skip_before_action :authorized, only: %i[index]
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy upvote downvote]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    
+    if params[:query]
+      @posts = Post.where("title LIKE ? OR description LIKE ?", "%#{params[:query]}%", "%#{params[:query]}%").order(:created_at)
+    else 
+      @posts = Post.all.order(:created_at)
+    end 
+    
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post.increment!(:views)
   end
 
   # GET /posts/new
@@ -57,6 +64,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def upvote
+    @post.increment!(:upvotes)
+    redirect_to @post
+  end 
+
+  def downvote
+    @post.decrement!(:upvotes)
+    redirect_to @post
+  end 
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -67,4 +86,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :description)
     end
+
+
+
 end

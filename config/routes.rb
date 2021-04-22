@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    member do 
+      post :upvote
+      post :downvote
+    end 
+  end 
   resources :users
   resources :sessions
   resources :tags

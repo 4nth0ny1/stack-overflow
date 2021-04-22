@@ -10,16 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_030010) do
+ActiveRecord::Schema.define(version: 2021_04_22_002937) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "upvotes"
-    t.integer "answers"
-    t.integer "views"
+    t.integer "upvotes", default: 0
+    t.integer "views", default: 0
   end
 
   create_table "tags", force: :cascade do |t|
