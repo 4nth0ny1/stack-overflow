@@ -9,7 +9,10 @@
       <div class="menu-section"
         <p>Home</p>
         <p>PUBLIC</p>
-        <%= link_to "Questions", posts_path, class: "nav-link menu-item" %>
+        <div class="questions-sidebar">
+          <%= link_to(image_tag('earth.png'), posts_path, class: "questions-sidebar-item") %>
+          <%= link_to "Questions", posts_path, class: "nav-link menu-item questions-sidebar-item" %>
+        </div>
         <p class='menu-item'>Tags</p>
         <p class='menu-item'>Users</p>
         <p>FIND A JOB</p>
@@ -18,13 +21,13 @@
         <p>TEAMS</p>
       </div>
     </div>
-    <div class="col-8 col-border">
+    <div class="col col-border">
       <div class="container d-inline d-flex">
         <div class="col-2">
           <p><%= link_to(image_tag('up-arrow.png'), upvote_post_path(@post), method: :post) %></p>
           <p><%= @post.upvotes %></p>
           <p><%= link_to(image_tag('down-arrow.png'), downvote_post_path(@post), method: :post) %></p>
-          <p><%= @post.views %>views</p>
+          <p><%= @post.views %> views</p>
         </div>
         <div class="col">
             <h1><%= @post.title %></h1>
@@ -45,7 +48,7 @@
 
 
     </div>
-    <div class="col">
+    <div class="col-3">
       <div class="overflow-blog-section">
         <p class="overflow-blog-section-header">The Overflow Blog</p>
         <p class="overflow-blog-section-item">Level Up: Creative Coding with p5.js – part 6</p>

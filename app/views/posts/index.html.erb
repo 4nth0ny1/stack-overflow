@@ -9,7 +9,10 @@
       <div class="menu-section"
         <p>Home</p>
         <p>PUBLIC</p>
-        <%= link_to "Questions", posts_path, class: "nav-link menu-item" %>
+        <div class="questions-sidebar">
+          <%= link_to(image_tag('earth.png'), posts_path, class: "questions-sidebar-item") %>
+          <%= link_to "Questions", posts_path, class: "nav-link menu-item questions-sidebar-item" %>
+        </div>
         <p class='menu-item'>Tags</p>
         <p class='menu-item'>Users</p>
         <p>FIND A JOB</p>

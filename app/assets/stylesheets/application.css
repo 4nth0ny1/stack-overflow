@@ -129,3 +129,12 @@
     }
     
         /* POSTS PAGE */
+
+    .questions-sidebar {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .questions-sidebar-item {
+      margin: 0px;
+    }
