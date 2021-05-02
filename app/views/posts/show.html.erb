@@ -1,35 +1,114 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<div class="container d-inline d-flex">
-  <div class="col-2">
-    <p>
-      <%= link_to "Up", upvote_post_path(@post), method: :post %>
-    </p>
-    <p>
-      <%= @post.upvotes %>
-    </p>
-    <p>
-      <%= link_to "Down", downvote_post_path(@post), method: :post %>
-    </p>
+<div class="container">
 
-    <p>
-      <%= @post.views %>
-      views
-    </p>
-  </div>
-  <div class="col">
-    <p>
-      <strong>Title</strong>
-      <br>
-      <%= @post.title %>
-    </p>
-    <p>
-      <strong>Description</strong>
-      <br>
-      <%= @post.description %>
-    </p>
+  <div class="row">
+    <div class="col-2">
+      <div class="menu-section"
+        <p>Home</p>
+        <p>PUBLIC</p>
+        <%= link_to "Questions", posts_path, class: "nav-link menu-item" %>
+        <p class='menu-item'>Tags</p>
+        <p class='menu-item'>Users</p>
+        <p>FIND A JOB</p>
+        <p class='menu-item'>Jobs</p>
+        <p class='menu-item'>Companies</p>
+        <p>TEAMS</p>
+      </div>
+    </div>
+    <div class="col-8 col-border">
+      <div class="container d-inline d-flex">
+        <div class="col-2">
+          <p><%= link_to(image_tag('up-arrow.png'), upvote_post_path(@post), method: :post) %></p>
+          <p><%= @post.upvotes %></p>
+          <p><%= link_to(image_tag('down-arrow.png'), downvote_post_path(@post), method: :post) %></p>
+          <p><%= @post.views %>views</p>
+        </div>
+        <div class="col">
+            <h1><%= @post.title %></h1>
+          <p><%= @post.description %></p>
+          <p>
+            <% @post.tags.each do |tag| %>
+              <%= tag.name %>
+            <% end %>
+          </p>
+          <% #if current_user == @post.user %>
+            <%= link_to 'Edit', edit_post_path(@post) %> |
+            <%= link_to 'Back', posts_path %>
+          <% #end %>
+        </div>
+      </div>
 
-    <%= link_to 'Edit', edit_post_path(@post) %> |
-    <%= link_to 'Back', posts_path %>
+
+
+
+    </div>
+    <div class="col">
+      <div class="overflow-blog-section">
+        <p class="overflow-blog-section-header">The Overflow Blog</p>
+        <p class="overflow-blog-section-item">Level Up: Creative Coding with p5.js – part 6</p>
+        <p class="overflow-blog-section-item">How often do people actually copy and paste from Stack Overflow? Now we know.</p>
+        <p class="overflow-blog-section-header">Featured on Meta</p>
+        <p class="overflow-blog-section-item">
+        Stack Overflow for Teams is now free for up to 50 users, forever</p>
+        <p class="overflow-blog-section-item">Outdated Answers: results from use-case survey</p>
+        <p class="overflow-blog-section-item">Downvotes Survey results</p>
+        <p class="overflow-blog-section-header">Hot Meta Posts</p>
+        <p class="overflow-blog-section-item">
+        Let's go off-[script]!</p>
+        <p class="overflow-blog-section-item">Obvious copied answer not being deleted</p>
+      </div>
+
+      <div class="filters-tags-boxes">
+          <div class="custom-filters filters-tags-box">
+              <p>Custom Filters</p>
+            <div class="filter-tags-box-item">
+              <p>Create a custom filter</p>
+            </div>
+          </div>
+
+          <div class="watched-tags filters-tags-box">
+            <p>Watched Tags</p>
+            <img href="#">Image Magnified Glass</img>
+            <p>Watch tags to curate your list of questions.</p>
+            <button>Watch a tag</button>
+          </div>
+
+          <div class="ignored-tags filters-tags-box">
+            <p>Ignored Tags</p>
+            <div class="filter-tags-box-item">
+              
+              <p>Add an ignored tag</p>
+            </div>
+          </div>
+      </div>
+
+      <div class="hot-network-questions">
+          <p>Hot Network Questions</p>
+          <div class="hot-network-questions-items">
+            <p>Is money that has gone into bitcoin already spent?</p>
+            <p>A key question to ask of the "Good Shepherd" discourse of John 10</p>
+            <p>How does armor and weapon proficiencies work with sidekicks?</p>
+            <p>Tikz: Setting an anchor in a pic for relative positioning</p>
+            <p>Is money that has gone into bitcoin already spent?</p>
+            <p>A key question to ask of the "Good Shepherd" discourse of John 10</p>
+            <p>How does armor and weapon proficiencies work with sidekicks?</p>
+            <p>Tikz: Setting an anchor in a pic for relative positioning</p>
+            <p>Is money that has gone into bitcoin already spent?</p>
+            <p>A key question to ask of the "Good Shepherd" discourse of John 10</p>
+            <p>How does armor and weapon proficiencies work with sidekicks?</p>
+            <p>Tikz: Setting an anchor in a pic for relative positioning</p>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+

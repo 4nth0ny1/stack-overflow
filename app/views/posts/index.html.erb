@@ -73,10 +73,11 @@
                   <p><%= post.description %></p>
               </div>
 
+              
               <div class="tags">
-                  <p class="tag-items">ruby</p>
-                  <p class="tag-items">rails</p>
-                  <p class="tag-items">iteration</p>
+                <% post.tags.each do |tag| %>
+                    <p class="tag-items"><%= tag.name %></p>
+                <% end %>
               </div>
             </div>
 

@@ -21,6 +21,8 @@
     <%= form.text_area :description, rows: 5, cols: 100 %>
   </div>
 
+  <%= form.collection_check_boxes :tag_ids, Tag.all, :id, :name%>
+
   <div class="actions">
     <%= form.submit %>
   </div>
